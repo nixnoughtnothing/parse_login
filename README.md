@@ -55,7 +55,7 @@ The easiest way to login,signup,facebook and twitter login using Parse
 e.g.
 
 **AppDelegate.swift**
-```
+```Swift
 import UIKit
 import Parse // ①import Parse Library
 
@@ -73,3 +73,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 }
 ```
+
+[4] Create Login and Signup views
+
+* Go to `ViewController.swift`
+* import Parse
+* import ParseUI
+* List the superclass names(PFLogInViewControllerDelegate,PFSignUpViewControllerDelegate) before any protocols it adopts, followed by a comma:
+
+  e.g.
+  **ViewController.swift**
+  ```Swift
+  class ViewController: UIViewController,PFLogInViewControllerDelegate,PFSignUpViewControllerDelegate{
+      // class definition goes here 
+  }
+  ```
+  
+* Declare and initialize 2 new Properties in ViewController.swift
+
+  e.g.
+  ```Swift
+  var logInViewController:PFLogInViewController! = PFLogInViewController()
+  var singUpViewController: PFSignUpViewController! = PFSignUpViewController()
+  ```
+   
+* Add Login Methods in ViewController.swift
+  ```Swift
+  // MARK: Parse LogIn
+
+  func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool{
+    return true
+  }
+  
+  func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+  }
+    
+  func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+  }
+  ```
+  
+* Add SignUp Methods 
+  ```Swift
+  
+  // MARK: Parse Sign Up
+  
+  func signUpViewController(signUpController: PFSignUpViewController, shouldBeginSignUp info: [NSObject : AnyObject]) -> Bool {
+    return true
+  }
+    
+  func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+  }
+    
+  func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
+  }
+    
+  func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
+  }
+  ```
