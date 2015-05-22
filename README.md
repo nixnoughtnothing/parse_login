@@ -130,3 +130,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
   }
   ```
+  
+* override ViewDidAppear Method, create LogIn/SignUp Views
+  
+  e.g.
+
+  **ViewController.swift**
+  ```Swift
+  
+  override func viewDidApper(animated:Bool){
+      super.viewDidApper(animated)
+     
+      // if currentUser is NOT logged in
+      if (PFUser.currentUser() == nil){
+     
+        /** present login View **/
+        // set login view fields
+        self.logInViewController.fields = PFLogInFields.UsernameAndPassword | PFLoginFields.LogInButton  |
+        PFLogInFields.SignUpButton | PFLogInFields.PasswordForgotten | PFLogInFields.DismissButton
+         
+        // set login view title
+        var logInLogoTitle = UILabel()
+        LogInLogoTitle.text = “Test(Swift App)"
+        self.logInViewController.logInView.logo = logoInLogoTitle
+
+        // set delegate
+        self.logInViewController.delegate = self
+
+        /** present signup View **/
+        var signUpLogoTitle = UILabel()
+        signUpLogoTItle.text = "SignUp Test"
+        self.signUpViewController.signUpView.logo = signUpLogoTitle
+         
+        // set delegate
+        self.signUpViewController.delegate = self
+        
+        self.logInViewController.SignUpViewController = self.signUpViewController
+      }
+  }
+  
+  
