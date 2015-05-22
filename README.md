@@ -151,7 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          
         // set login view title
         var logInLogoTitle = UILabel()
-        LogInLogoTitle.text = “Test(Swift App)"
+        LogInLogoTitle.text = "Test(Swift App)"
         self.logInViewController.logInView.logo = logoInLogoTitle
 
         // set delegate
@@ -168,5 +168,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.logInViewController.SignUpViewController = self.signUpViewController
       }
   }
+  ```
   
+  * implement singup/login methods
   
+  **ViewController.swift**
+
+  **Log In**
+  ```Swift
+  // MARK: logIn Actions
+    
+    func logInViewController(logInController: PFLogInViewController, shouldBeginLogInWithUsername username: String, password: String) -> Bool {
+        
+        if (!username.isEmpty || !password.isEmpty){
+            return true
+        }else{
+            var alert = UIAlertView(title: "username or password is not entered", message: "please enter", delegate: self, cancelButtonTitle: "OK")
+            return false
+        }
+    }
+    
+    func logInViewController(logInController: PFLogInViewController, didLogInUser user: PFUser) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func logInViewController(logInController: PFLogInViewController, didFailToLogInWithError error: NSError?) {
+        println("failed to login: \(error)")
+    }
+  ```
+  
+  **Sign Up**
+  ```
+    func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func signUpViewController(signUpController: PFSignUpViewController, didFailToSignUpWithError error: NSError?) {
+        println("failed to sign up: \(error)")
+    }
+    
+    func signUpViewControllerDidCancelSignUp(signUpController: PFSignUpViewController) {
+        println("User dismissed sign up")
+    }
+  ```
