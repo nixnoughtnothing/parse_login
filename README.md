@@ -29,18 +29,19 @@ The easiest way to login,signup,facebook and twitter login using Parse
 
   Then,  
   Click the + button in the bottom left of the "Link Binary With Libraries" section and add the following libraries  
-      "AudioToolbox.framework"
-      "CFNetwork.framework"
-      "CoreGraphics.framework"
-      "CoreLocation.framework"
-      "MobileCoreServices.framework"
-      "QuartzCore.framework"
-      "Security.framework"
-      "StoreKit.framework"
-      "SystemConfiguration.framework"
-      "libz.dylib"
-      "libsqlite3.dylib"
-      "Accounts.framework"
+      
+      "AudioToolbox.framework"  
+      "CFNetwork.framework"  
+      "CoreGraphics.framework"  
+      "CoreLocation.framework"  
+      "MobileCoreServices.framework"  
+      "QuartzCore.framework"  
+      "Security.framework"  
+      "StoreKit.framework"  
+      "SystemConfiguration.framework"  
+      "libz.dylib"  
+      "libsqlite3.dylib"  
+      "Accounts.framework"  
       "Social.framework"  
       
 * Create "Framework directory" and then,drag and drog the frameworks you added.
