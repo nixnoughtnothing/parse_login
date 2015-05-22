@@ -198,7 +198,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   ```
   
   **Sign Up**
-  ```
+  ```Swift
+    // MARK: Parse Sign Up
+    
     func signUpViewController(signUpController: PFSignUpViewController, didSignUpUser user: PFUser) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
@@ -211,3 +213,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         println("User dismissed sign up")
     }
   ```
+
+[5] Put Login/Signup Button
+
+* Go to Storyboard then, Add two buttons on your ViewController
+* Link these Buttons to ViewController.swift code
+
+e.g.
+**ViewController.swift**
+```Swift
+// MARK: Actions
+    
+@IBAction func signUpButtonPushed(sender: AnyObject){
+     self.presentViewController(signUpViewController,animated:true, completion:nil)
+}
+
+
+@IBAction func logInButtonPushed(sender: AnyObject){
+     self.presentViewController(logInViewController.Animated:true,completion:nil)
+}
+```
+
+[6] LogOut Button  
+
+######  coming soon  
+
+[7] Facebook and Twitter login  
+
+######  coming soon  
