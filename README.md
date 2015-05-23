@@ -1,8 +1,10 @@
 # Parse_login
 The easiest way to login,signup,facebook and twitter login using Parse
 
-## Demo
-######  More details Coming Soon!
+## ScreenShots
+![ScreenShot1](https://github.com/nixnoughtnothing/parse_login/blob/master/ScreenShots/parse_login1.png)
+![ScreenShot2](https://github.com/nixnoughtnothing/parse_login/blob/master/ScreenShots/parse_login2.png)
+![ScreenShot3](https://github.com/nixnoughtnothing/parse_login/blob/master/ScreenShots/parse_login3.png)
 
 ## Development environment
 * Mac OS X 10.10.3 Yosemite  
